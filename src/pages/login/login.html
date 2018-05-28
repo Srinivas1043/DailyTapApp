@@ -1,0 +1,75 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="orange">
+    <ion-title align=center>Daily Tap</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding>
+
+   <ion-grid>
+     <ion-row>
+       <ion-col>
+
+       </ion-col>
+
+       <ion-col>
+         <img  src="../assets/imgs/logo.png">
+
+       </ion-col>
+
+
+       <ion-col>
+
+       </ion-col>
+
+       <br />
+     </ion-row>
+
+
+<form>
+
+     <ion-row>
+
+             <ion-item>
+             <ion-label floating=""><b>Contact</b></ion-label>
+             <ion-input class="input"  type="tel" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}"></ion-input>
+
+           </ion-item>
+
+     </ion-row>
+<br/>
+<br/>
+
+     <ion-row>
+        <ion-col>
+        </ion-col>
+           <ion-col >
+            <button color=orange ion-button block (click) = "Otpverify()">Send Otp</button>          
+           </ion-col>
+
+
+                      <ion-col >
+
+                      </ion-col>
+
+
+
+     </ion-row>
+
+</form>
+
+
+   </ion-grid>
+
+
+
+
+</ion-content>

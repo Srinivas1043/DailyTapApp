@@ -1,0 +1,18 @@
+page-login {
+
+}
+.pane {
+      background: url('../../assets/imgs/bg.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+  }
+.input {
+      padding-left: 4px;
+      height: 29px;
+      background: transparent;
+      line-height: 18px;
+      // you should add the following:
+      box-sizing: border-box;
+      width: 100%;
+  }
