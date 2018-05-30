@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfilePage} from '../profile/profile';
+import {OtpverificationPageModule } from './otpverification.module';
 /**
  * Generated class for the OtpverificationPage page.
  *
@@ -11,12 +13,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-otpverification',
   templateUrl: 'otpverification.html',
+  providers : [OtpverificationPageModule]
 })
-export class OtpverificationPage {
-otpr:number;
+export class OtpverificationPage   {
+otp:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.otpr = ' ';
+  constructor(public navCtrl: NavController, public navParams: NavParams, public p:OtpverificationPageModule) {
+  this.otp = '';
   }
 
   ionViewDidLoad() {
@@ -26,7 +29,14 @@ otpr:number;
 profilePage()
 {
 
- console.log(this.otpr);
+ this.p.res = this.otp;
+if(this.p.res!=''){
+  this.navCtrl.push(ProfilePage);
+  console.log(this.p.res);
+}
+else{
+  this.ionViewDidLoad();
+}
 
 }
 }

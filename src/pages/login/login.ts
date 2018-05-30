@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {OtpverificationPage} from '../otpverification/otpverification';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertController } from 'ionic-angular';
 
 

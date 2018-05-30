@@ -1,0 +1,31 @@
+<!--
+  Generated template for the PausePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color=orange>
+    <ion-buttons start>
+      <button  ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align=center>VACATION DATES</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p> Going on a weekend trip or out of town for a few days. No worries!!. Simply create a vacation to suspend all deliveiries for the set dates.</p>
+  <mbsc-form>
+
+      <div class="mbsc-form-group">
+
+          <mbsc-calendar [(ngModel)]="demo" [options]="demoSettings" placeholder="Please Select...">Start Date</mbsc-calendar>
+          <mbsc-calendar [(ngModel)]="header" [options]="headerSettings" placeholder="Please Select...">End Date</mbsc-calendar>
+      </div>
+  </mbsc-form>
+</ion-content>

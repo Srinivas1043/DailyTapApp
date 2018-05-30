@@ -9,29 +9,32 @@
 
 
 <ion-content padding>
-
+<form>
 <ion-item align=center>
+
   <ion-label floating>OTP</ion-label>
-  <ion-input [(ngModel)] = "otp"  [ngModelOptions]="{standalone: true}" type="number"></ion-input>
+  <ion-input type="text" [(ngModel)]="otp" [ngModelOptions]="{standalone: true}"></ion-input>
 
 </ion-item>
 
 <br/>
 <p align=center> Detecting SMS Verification!!</p>
-{{otp}}
-  <p align=center style="padding-top:350px"> Waiting 30s Before you can resend the code.. </p>
-</ion-content>
 
-<ion-footer>
-<ion-grid>
-  <ion-row>
+  <p align=center style="padding-top:350px"> Waiting 30s Before you can resend the code.. </p>
+
+
+
+<ion-grid >
+  <ion-row >
     <ion-col col-6>
         <button color="light" disabled ion-button block>Resend Code</button>
     </ion-col>
 
           <ion-col col-6>
-            <button color=orange ion-button (click) = "profilePage()">Confirm</button>
+            <button color=orange ion-button (click) = "profilePage()" block>Confirm</button>
           </ion-col>
   </ion-row>
+
 </ion-grid>
-</ion-footer>
+</form>
+</ion-content>

@@ -10,4 +10,8 @@ import { OtpverificationPage } from './otpverification';
     IonicPageModule.forChild(OtpverificationPage),
   ],
 })
-export class OtpverificationPageModule {}
+export class OtpverificationPageModule {
+
+public res:any;
+
+}

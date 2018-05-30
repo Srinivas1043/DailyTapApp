@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color=orange>
+    <ion-buttons start>
+      <button  ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align=center>
+      Calendar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="mbsc-form-group">
+        <mbsc-calendar  class="mbsc-form-group" [(ngModel)]="calendarOneWeek" display="inline" weeks="1"></mbsc-calendar>
+    </div>
+
+<ion-grid>
+  <ion-row align=center>
+
+
+
+        <button color=orange (click)="addProducts()" ion-button icon-left>
+          <ion-icon name="add"></ion-icon>
+ADD PRODUCTS
+        </button>
+
+
+  </ion-row>
+
+    <ion-row  align=center>
+              <button color=orange  (click)="pauseDeliveries()" ion-button icon-left>
+        <ion-icon name="pause"></ion-icon>
+          PAUSE DELIVERIES(ON VACATION)
+        </button>
+
+    </ion-row>
+</ion-grid>
+</ion-content>

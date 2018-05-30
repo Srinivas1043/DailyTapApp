@@ -1,0 +1,45 @@
+<!--
+  Generated template for the AddproductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color=orange>
+    <ion-buttons start>
+      <button  ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align=center>ADD PRODUCTS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-item-divider color="light" align=center> <b> ADD FROM ACTIVE SUBSCRIPTIONS </b></ion-item-divider>
+
+<p> No Active Subscriptions </p>
+
+<ion-item-divider color=orange align=center> <b> ADD NEW PRODUCTS </b></ion-item-divider>
+
+<ion-grid>
+<ion-row>
+  <button color=light ion-button icon-right block (click)="dropdownProducts()" >Milk<ion-icon name="arrow-dropdown"></ion-icon></button>
+  <ion-list #cc>
+    <ion-list-header>
+     TONED
+    </ion-list-header>
+    <ion-item>Amul</ion-item>
+    <ion-item>Mother Dairy</ion-item>
+    <ion-item>Aavin</ion-item>
+  </ion-list>
+</ion-row>
+</ion-grid>
+
+
+</ion-content>
