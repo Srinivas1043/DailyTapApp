@@ -6,6 +6,7 @@ import {AddressPage} from '../address/address';
 import {PausePage} from '../pause/pause';
 import {AddproductsPage} from '../addproducts/addproducts';
 import {AboutusPage} from '../aboutus/aboutus';
+import {CustomeraddressPage} from '../customeraddress/customeraddress';
 
 
  export interface PageInterface {
@@ -37,6 +38,7 @@ pages: PageInterface[] = [
           {title: 'ADD PRODUCTS', pageName:AddproductsPage,icon:'add'},
             {title: 'VACATION',  pageName:PausePage, icon:'pause'},
             {title: 'ABOUT', pageName:AboutusPage, icon:'cart'},
+            {title:'CUSTOM ADDRESS' , pageName: CustomeraddressPage, icon:'arrow'},
             {title: 'CALL US', pageName:'',  icon:'call'},
             {title: 'LOGOUT',  pageName:'',icon:'power'},
 

@@ -11,11 +11,15 @@ import { AddressPage } from '../address/address';
   providers:[ProfilePageModule]
 })
 export class ProfilePage {
-Name:any;
+FirstName:any;
+LastName:any;
+Password:any;
 Email:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public pr:ProfilePageModule) {
-    this.Name = '';
+    this.LastName = '';
     this.Email = '';
+    this.FirstName = '';
+    this.Password = '';
   }
 
   ionViewDidLoad() {
@@ -23,17 +27,17 @@ Email:any;
   }
 
 Addresspage(){
-  this.pr.profilename = this.Name;
+  this.pr.profilefirstname = this.FirstName;
   this.pr.profileemail = this.Email;
 
-if(this.pr.profilename == '' || this.pr.profileemail== '')
+if(this.pr.profilefirstname == '' || this.pr.profileemail== '')
   {
   this.ionViewDidLoad();
   }
 
 
   else{
-  console.log(this.pr.profilename, this.pr.profileemail);
+  console.log(this.pr.profilefirstname, this.pr.profileemail);
   this.navCtrl.push(AddressPage);
 }
 }

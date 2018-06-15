@@ -1,5 +1,6 @@
 import { Component, ViewChild, Renderer } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProductProvider } from '../../providers/product/product';
 
 /**
  * Generated class for the AddproductsPage page.
@@ -14,19 +15,41 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'addproducts.html',
 })
 export class AddproductsPage {
+products:Product[];
 
-  accordianExpanded = false;
-  @ViewChild("cc") card:any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public renderer: Renderer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public product: ProductProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddproductsPage');
+    this.product.getProduct().subscribe((datas) => {
+    this.products = datas;
+
+    console.log(this.products);
+  });
   }
 
-  dropdownProducts(){
-    console.log("Still i should compelter")
+  showProducts(){
+    this.product.getProduct().subscribe((datas) => {
+   this.products = datas;
+   console.log(this.products);
+    });
+
   }
+
+}
+
+interface Product{
+  ProductId:any,
+CategoryId: any,
+BrandId: any,
+MeasureId: any,
+ProductName: any,
+ProductPrice: any,
+Availability: any,
+ProductDescription:any,
+CreatedAt: any,
+UpdatedAt: any,
+ProductImage:any
 
 }

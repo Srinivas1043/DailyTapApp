@@ -14,13 +14,18 @@ import {OtpverificationPage} from '../pages/otpverification/otpverification';
 import {ProfilePage} from '../pages/profile/profile';
 import {AddproductsPage} from '../pages/addproducts/addproducts';
 import {PausePage} from '../pages/pause/pause';
-import {AboutusPage} from '../pages/aboutus/aboutus';
+import { AboutusPage } from '../pages/aboutus/aboutus';
+import { HttpModule } from '@angular/http';
 
 import { AddressPage} from '../pages/address/address';
 import {CustomeraddressPage} from '../pages/customeraddress/customeraddress';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginProvider } from '../providers/login/login';
+import {SignupPage} from '../pages/signup/signup';
+import { SignupProvider } from '../providers/signup/signup';
+import { ProductProvider } from '../providers/product/product';
 
 @NgModule({
   declarations: [
@@ -37,13 +42,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DailytapmenuPage,
     AddproductsPage,
     AboutusPage,
-    PausePage
+    PausePage,
+    SignupPage
 
   ],
   imports: [
     FormsModule,
     MbscModule,
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -61,7 +68,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DailytapmenuPage,
     AddproductsPage,
     AboutusPage,
-    PausePage
+    PausePage,
+    SignupPage
   ],
   providers: [
     StatusBar,
@@ -69,7 +77,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginProvider,
+    SignupProvider,
+    ProductProvider,
   ]
 })
 export class AppModule {}

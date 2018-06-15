@@ -22,13 +22,23 @@
 <form>
 
   <ion-item>
-   <ion-label floating>Name</ion-label>
-   <ion-input [(ngModel)] = "Name"  [ngModelOptions]="{standalone: true}" type="text" value=""></ion-input>
+   <ion-label floating>First Name</ion-label>
+   <ion-input [(ngModel)] = "FirstName"  [ngModelOptions]="{standalone: true}" type="text" value=""></ion-input>
  </ion-item>
+
+ <ion-item>
+  <ion-label floating>Last Name</ion-label>
+  <ion-input [(ngModel)] = "LastName"  [ngModelOptions]="{standalone: true}" type="text" value=""></ion-input>
+</ion-item>
 
  <ion-item>
    <ion-label floating>Email</ion-label>
    <ion-input [(ngModel)] = "Email" [ngModelOptions]="{standalone: true}" type="email"></ion-input>
+ </ion-item>
+
+ <ion-item>
+   <ion-label floating>Password</ion-label>
+   <ion-input [(ngModel)] = "Password" [ngModelOptions]="{standalone: true}" type="password"></ion-input>
  </ion-item>
 <br/>
 <br/>

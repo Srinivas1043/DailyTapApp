@@ -13,7 +13,7 @@ import { ProfilePage } from './profile';
   ],
 })
 export class ProfilePageModule {
-profilename:string;
+profilefirstname:string;
 profileemail:string;
 
 }

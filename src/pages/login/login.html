@@ -12,63 +12,70 @@
 </ion-header>
 
 
-<ion-content  padding>
+<ion-content padding>
 
-   <ion-grid>
-     <ion-row>
-       <ion-col>
+  <h2> </h2>
 
-       </ion-col>
+  <ion-grid >
 
-       <ion-col>
-         <img  src="../assets/imgs/logo.png">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <img src="../assets/imgs/logo.png">
+      </ion-col>
 
-       </ion-col>
+      <ion-col>
+      </ion-col>
+      <br />
+    </ion-row>
+    <form>
+      <ion-row>
+        <ion-item>
+          <ion-label floating=""><b>email</b></ion-label>
+          <ion-input class="input" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+            {{email}}
+        </ion-item>
+      </ion-row>
 
-
-       <ion-col>
-
-       </ion-col>
-
-       <br />
-     </ion-row>
-
-
-<form>
-
-     <ion-row>
-
-             <ion-item>
-             <ion-label floating=""><b>Contact</b></ion-label>
-             <ion-input class="input"  type="tel" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}"></ion-input>
-
-           </ion-item>
-
-     </ion-row>
-<br/>
-<br/>
-
-     <ion-row>
+      <br />
+      <ion-row>
+        <ion-item>
+          <ion-label floating=""><b>Password</b></ion-label>
+          <ion-input class="input" type="password" [(ngModel)]="pwd" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+      </ion-row>
+      <br />
+      <ion-row>
         <ion-col>
         </ion-col>
-           <ion-col >
-            <button color=orange ion-button block (click) = "Otpverify()">Send Otp</button>          
-           </ion-col>
+        <ion-col>
+          <button color=orange ion-button block (click)="Otpverify()">Login</button>
+        </ion-col>
 
+        <ion-col>
 
-                      <ion-col >
+        </ion-col>
 
-                      </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <p> New User?</p>
+          <button color=orange ion-button block (click)="signupredirect()">Signup</button>
+        </ion-col>
 
+        <ion-col>
 
-     </ion-row>
+        </ion-col>
 
-</form>
+      </ion-row>
 
+    </form>
 
-   </ion-grid>
-
+  </ion-grid>
 
 
 

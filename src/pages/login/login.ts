@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {OtpverificationPage} from '../otpverification/otpverification';
 import { AlertController } from 'ionic-angular';
-
+import {SignupPage} from '../signup/signup';
+import {LoginProvider} from '../../providers/login/login';
 
 
 
@@ -12,23 +13,28 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  contact:any;
+  email:any = '';
+  pwd:any ='';
+  logs:Log[];
+  len_login_data:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
 
-      this.contact = '';
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private login: LoginProvider) {
+    
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+
+
   }
 
 
 presentAlert(){
   let alert = this.alertCtrl.create({
-    title:'Invalid Number',
-    subTitle: 'Number does is not valid. Please check',
+    title:'Invalid Login Credentials',
+    subTitle: 'Please Login Again or Sign up as a New User',
     buttons:['Dismiss']
   });
   alert.present();
@@ -36,17 +42,57 @@ presentAlert(){
 
 Otpverify()
 {
-  let contact1:any;
-  contact1 = this.contact;
-
-  if(contact1.toString().length==10){
+  this.login.getLogin().subscribe((datas) => {
+ this.logs = datas;
+ var len = this.logs.length;
+for (var i=0;i<len;i++)
+{
+if(this.email == this.logs[i].CustomerEmail && this.pwd == this.logs[i].CustomerPassword){
   this.navCtrl.push(OtpverificationPage);
-  console.log(contact1);
 }
 else{
   this.presentAlert();
 }
 }
+  });
+
+//this.navCtrl.push(OtpverificationPage);
 
 
 }
+
+showLogin(){
+  this.login.getLogin().subscribe((datas) => {
+ this.logs = datas;
+ var len = this.logs.length;
+for (var i=0;i<len;i++)
+{
+if(this.email == this.logs[i].CustomerEmail && this.pwd == this.logs[i].CustomerPassword){
+  console.log("Success Login");
+}
+else{
+  console.log(this.email , this.pwd);
+}
+}
+  });
+
+}
+
+
+signupredirect(){
+this.navCtrl.push(SignupPage);
+}
+
+
+
+
+}
+
+interface Log{
+CustomerId: any,
+CustomerFirstName:any,
+CustomerLastName:any,
+CustomerEmail:any,
+CustomerContact:any,
+CustomerPassword:any,
+  }
